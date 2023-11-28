@@ -1,0 +1,81 @@
+@import 'constants/constans.scss';
+
+.block {
+  @include flexRow(center, left);
+  column-gap: toRem(24);
+  margin: toRem(48) auto 0;
+
+  .user {
+    @include flexColumn(center, center);
+    text-align: center;
+    background-color: $grey;
+    padding: toRem(16);
+    border-radius: toRem(16);
+    // &:hover {
+    //   background-color: #f0eff0;
+    // }
+
+    &_image {
+      position: relative;
+      display: inline-block;
+      border-radius: 50%;
+
+      & img {
+        border-radius: 50%;
+      }
+    }
+
+    &_place {
+      @include flexRow(center, center);
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%) translateY(40%);
+      border-radius: 50%;
+      background-color: #f0eff0; /* No in root !!! */
+      border: toRem(2) solid $white;
+      color: $dark;
+      font-weight: 600;
+      width: toRem(36);
+      height: toRem(36);
+      line-height: 137.5%; /* 22/16 */
+    }
+
+    &_name {
+      margin-top: toRem(24);
+
+      color: $dark;
+      font-size: toRem(20);
+      font-weight: 600;
+      line-height: 140%; /* 28/20 */
+    }
+
+    &_achive {
+      margin-top: toRem(12);
+      @include flexRow(center, flex-start);
+      column-gap: toRem(4);
+      color: $mainColor;
+    }
+
+    &_first {
+      .user_place {
+        width: toRem(36);
+        height: toRem(36);
+
+        color: $dark;
+        font-weight: 400;
+        font-size: toRem(16);
+        line-height: 1.375%; /* 22/16 */
+
+        background-color: $gold;
+        border: toRem(2) solid $white;
+      }
+
+      .user_achive {
+        & svg {
+          color: $gold;
+        }
+      }
+    }
+  }
+}

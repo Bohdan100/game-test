@@ -1,0 +1,63 @@
+@import 'constants/constans.scss';
+
+.wrap {
+  padding-top: toRem(24);
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: toRem(1);
+    background-color: $grey_pale;
+    z-index: 1;
+  }
+}
+
+.user {
+  @include flexRow(center, left);
+  column-gap: toRem(8);
+  font-size: toRem(16);
+  font-weight: 400;
+  line-height: 137.5%;
+  color: $dark;
+
+  &_email {
+    color: $mainColor;
+  }
+
+  &_context {
+    font-size: toRem(16);
+    font-weight: 400;
+    line-height: 137.5%;
+    color: $dark;
+  }
+
+  &_minusBtn {
+    @include flexRow(center, center);
+    width: toRem(48);
+    height: toRem(48);
+  }
+
+  &_minusIconWrap {
+    width: toRem(24);
+    height: toRem(24);
+    @include flexRow(center, center);
+    border-radius: toRem(16);
+    background: $white;
+    border: toRem(2) solid $dark;
+  }
+
+  &_minusActiveBtn {
+    background: $red;
+    border-color: $red;
+    color: $white;
+  }
+
+  &_arrowBtn {
+    width: toRem(48);
+    height: toRem(48);
+  }
+}
